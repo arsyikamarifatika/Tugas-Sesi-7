@@ -1,25 +1,24 @@
 package Sesi7;
 
 public class Outer {
-    int number=0;
-    
-    void outerMethod(){
-        class Inner{
-        public void print(){
+           int number = 0;
+
+    private class Inner {
+        public void print() {
             System.out.println("Mengakses inner class yang ke: " + (++number));
         }
     }
+
+    void displayFromMethod() {
         Inner in = new Inner();
         in.print();
     }
 }
 
-class OuterAccess{
-    
+class main {
     public static void main(String[] args) {
         Outer out = new Outer();
-        out.outerMethod();
-        out.outerMethod();
-        out.outerMethod();
+        out.displayFromMethod();
+        out.displayFromMethod();
     }
 }
